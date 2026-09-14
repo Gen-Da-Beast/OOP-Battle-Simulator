@@ -1,5 +1,6 @@
 from goblin import Goblin
-
+from hero import Hero
+import random
 
 ARENA_NAME = "genevieves fire ring"
 
@@ -19,6 +20,20 @@ def main():
     print(f"{goblin2.name} enters the arena with {goblin.health} health.")
     
     print("But no hero has answered the call... yet.")
+
+    hero= Hero("Stephan")
+    print(f"{hero.name} enters the arena with {hero.health} health.")
+
+    print(f"{hero.name} attacks {goblin.name}...")
+    goblin.take_damage(hero.attack())
+
+    if goblin.is_alive:
+        hero.take_damage(goblin.attack())
+
+
+    
+
+
 
 if __name__ == "__main__":
     main()
